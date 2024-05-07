@@ -4,7 +4,7 @@ import ReservationSidebar from "@/app/components/properties/ReservationSidebar";
 
 const PropertyDetailPage = () => {
   return (
-    <main className="max-w-[1500] mx-auto px-6">
+    <main className="max-w-[1500] mx-auto px-6 pb-6">
       <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
         <Image
           fill
