@@ -1,11 +1,14 @@
-// FIRST WAY
+/* FIRST WAY */
 // import React from "react";
 
-// type Props = { label: string };
+// type Props = { label: string; onClick: () => void; className?: string };
 
 // const CustomButton = (props: Props) => {
 //   return (
-//     <div className="w-full py-4 bg-primary hover:bg-secondary text-white rounded-xl cursor-pointer">
+//     <div
+//       onClick={props.onClick}
+//       className={`py-4 bg-primary hover:bg-secondary text-white text-center rounded-xl cursor-pointer ${props.className}`}
+//     >
 //       {props.label}
 //     </div>
 //   );
@@ -13,7 +16,7 @@
 
 // export default CustomButton;
 
-// SECOND WAY
+/* SECOND WAY */
 interface CustomButtonProps {
   label: string;
   className?: string;
@@ -28,7 +31,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   return (
     <div
       onClick={onClick}
-      className={`w-full py-4 bg-primary hover:bg-secondary text-white text-center rounded-xl cursor-pointer ${className}`}
+      className={`py-4 bg-primary hover:bg-secondary text-white text-center rounded-xl cursor-pointer ${className}`}
     >
       {label}
     </div>
