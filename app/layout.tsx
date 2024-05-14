@@ -24,7 +24,7 @@ export default function RootLayout({
 
         <div className="pt-32">{children}</div>
 
-        <Modal label="Test" content={content} isOpen={true} />
+        {/* <Modal label="Test" content={content} isOpen={false} /> */}
       </body>
     </html>
   );
