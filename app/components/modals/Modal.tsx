@@ -15,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ label, close, content, isOpen }) => {
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
-    setShowModal(isOpen);
+    setShowModal(false);
 
     setTimeout(() => {
       close();
@@ -27,7 +27,7 @@ const Modal: React.FC<ModalProps> = ({ label, close, content, isOpen }) => {
   }
   return (
     <div className="flex items-center justify-center fixed inset-0 z-50 bg-black/60">
-      <div className="relative w-[90%] md:w-[80%] lg:w-[700px] py-6 h-auto">
+      <div className="relative w-[90%] md:w-[80%] lg:w-[700px] my-6 mx-auto h-auto">
         <div
           className={`h-full duration-500 ${
             showModal
@@ -37,7 +37,10 @@ const Modal: React.FC<ModalProps> = ({ label, close, content, isOpen }) => {
         >
           <div className="w-full h-auto rounded-xl relative flex flex-col bg-white">
             <header className="relative h-[60px] flex items-center p-6 rounded-t justify-center border-b">
-              <div className="p-3 absolute left-3 hover:bg-gray-300 rounded-full cursor-pointer">
+              <div
+                onClick={handleClose}
+                className="p-3 absolute left-3 hover:bg-gray-300 rounded-full cursor-pointer"
+              >
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
